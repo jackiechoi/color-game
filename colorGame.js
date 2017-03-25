@@ -6,6 +6,7 @@ var messageDisplay = document.querySelector('#message')
 var squares = document.querySelectorAll(".square");
 var h1 = document.querySelector('h1');
 var resetButton = document.querySelector('#reset');
+
 resetButton.addEventListener('click', function(){
 	game.reset();
 })
@@ -23,7 +24,7 @@ game.setUpSquares = function(){
 				messageDisplay.innerHTML = "Correct!"
 				resetButton.textContent = "Play again?"
 				h1.style.background = clickedColor;
-				this.changeColors(clickedColor);
+				game.changeColors(clickedColor);
 			}else{
 				this.style.background="#232323";
 				messageDisplay.textContent = "Try Again"
@@ -62,10 +63,9 @@ game.generatePromptColor = function(){ //pickColor
 	return sixColorsArray[oneThruSix];
 }
 game.changeColors = function(clickedColor){
-	//loop thru all squares
-	for(var i=0; i<squares.length; i++){
+	for(var i=0; i<6; i++){
 		//change all colors to match given color
-		squares[i].style.background = color;
+		squares[i].style.background = clickedColor;
 	}
 }
 

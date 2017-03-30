@@ -52,14 +52,14 @@ game.generateSixColors = function(){
 	return arr;
 }
 game.randomColor = function(){
-	var r = Math.floor(Math.random()*256)
-	var g = Math.floor(Math.random()*256)
-	var b = Math.floor(Math.random()*256)
+	var r = Math.floor(Math.random()*255+1)
+	var g = Math.floor(Math.random()*255+1)
+	var b = Math.floor(Math.random()*255+1)
 	return "rgb("+r+", "+g+", "+b+")";
 }
 game.generatePromptColor = function(){ //pickColor
 	//random number between 1 and 6
-	var oneThruSix = Math.floor(Math.random()*7);
+	var oneThruSix = Math.floor(Math.random()*6);
 	return sixColorsArray[oneThruSix];
 }
 game.changeColors = function(clickedColor){
